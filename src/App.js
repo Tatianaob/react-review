@@ -1,34 +1,19 @@
 
 import './App.css';
 
+
 function App() {
+  const age = 28;
+  const isGreen = true;
+  // const isGreen = false;
+
   return <div className="App">
-    <User name="Tatiana" age={30} email="tati@tati.com"/>
-    <User name="Erika" age={39} email="erika@gmail.com"/>
-    <User name="Paola" age={26} email="paola@gmail.com"/>
-    <Job salary={9000} position="Senior SDE"company="Amazon"/>
-		<Job salary={12000} position="Junior SDE"company="Google"/>
-		<Job salary={10000} position="Project Manager"company="Netflix"/>
-  </div>;
-}
+    {age >= 18 ? <h1>over age</h1> : <h1>under age</h1>}
+    <h1 style={{color: isGreen ? "green": "red"}}>this has color </h1>
 
-
-
-const User = (props) => {
-  return ( <div>
-    <h1>{props.name}</h1>
-    <h1>{props.age}</h1>
-    <h1>{props.email}</h1>
+    {isGreen && <button>this is a button</button>}
   </div>
-  )
-};
+  }
 
-const Job = (props) => {
-  return ( <div>
-    <h2>{props.salary}</h2>
-    <h2>{props.position}</h2>
-    <h2>{props.company}</h2>
 
-  </div>)
-}
 export default App;
